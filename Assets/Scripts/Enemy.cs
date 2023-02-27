@@ -6,11 +6,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public Detection detection;
+
     private Transform player;
 
     private void Start()
     {
-        player = Player.Instance.transform;
+        player = detection.target;
     }
 
     void Update()
