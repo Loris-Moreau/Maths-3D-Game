@@ -33,6 +33,9 @@ public class Detection : MonoBehaviour
     [Space]
 
     [SerializeField] private Transform enemyHeadPos;
+
+    [Space]
+
     [SerializeField] private bool doCollisionTest = true;
     [SerializeField] private float collisionSphereSize = 0.1f;
     [SerializeField] private LayerMask collisionLayerMask = ~0;

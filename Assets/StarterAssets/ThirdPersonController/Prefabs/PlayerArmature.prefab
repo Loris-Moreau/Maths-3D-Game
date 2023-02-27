@@ -1114,6 +1114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseText: {fileID: 0}
+  winText: {fileID: 0}
   canBackStab: 0
 --- !u!114 &4416926081852918490
 MonoBehaviour:

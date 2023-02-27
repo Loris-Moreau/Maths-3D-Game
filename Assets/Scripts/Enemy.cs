@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        player = detection.target;
+        player = Player.Instance.transform;
     }
 
     void Update()

@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public static Player Instance;
 
     public GameObject loseText;
+    public GameObject winText;
 
     public bool canBackStab = false;
 
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         loseText.SetActive(false);
+        winText.SetActive(false);
     }
 
     void Update()
@@ -32,6 +34,15 @@ public class Player : MonoBehaviour
             detection.enemySpeed = 0f;
             TPC.MoveSpeed = 0f;
             loseText.SetActive(true);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (gameObject.CompareTag("winZone"))
+        {
+            detection.enemySpeed = 0f;
+            TPC.MoveSpeed = 0f;
+            winText.SetActive(true);
         }
     }
 }
