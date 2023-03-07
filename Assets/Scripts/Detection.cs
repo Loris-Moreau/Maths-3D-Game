@@ -16,31 +16,20 @@ public class Detection : MonoBehaviour
     [SerializeField] private Rigidbody enemyRb;
     [SerializeField] public float enemySpeed = 1f;
 
+    [Space]
+
     [SerializeField] private float smoothenedRotation = 0.05f;
-
-    [SerializeField] private float detectionDistance = 3f;
-    [SerializeField] private float detectionStopDistance = 5f;
-
     private Vector3 rotationalVelocity;
 
-    public bool playerDetected = false;
+    [Space]
+
+    /*[SerializeField]*/ private float detectionDistance = 4f;
+    //[SerializeField] private float detectionStopDistance = 7f;
+
+    [Space]
+    
     public Transform target;
-    #endregion
-
-    #region Wall Detection
-    [Space]
-    [Header("Collision Settings \n")]
-    [Space]
-
-    [SerializeField] private Transform enemyHeadPos;
-
-    [Space]
-
-    [SerializeField] private bool doCollisionTest = true;
-    [SerializeField] private float collisionSphereSize = 0.1f;
-    [SerializeField] private LayerMask collisionLayerMask = ~0;
-
-    private RaycastHit hit;
+    [SerializeField] public bool playerDetected = false;
     #endregion
 
     private void Start()
@@ -60,13 +49,12 @@ public class Detection : MonoBehaviour
             if (dot > 0.8f && Vector3.Distance(transform.position, target.position) < detectionDistance)
             {
                 playerDetected = true;
+                Player.Instance.OnDetection(this);
             }
         }
 
-        if (playerDetected)
+        /*if (playerDetected)
         {
-            //CheckCollisions();
-
             if (Vector3.Distance(transform.position, target.position) < detectionStopDistance)
             {
                 transform.position = Vector3.MoveTowards(transform.position, target.position, enemySpeed * Time.fixedDeltaTime);
@@ -76,20 +64,6 @@ public class Detection : MonoBehaviour
                 transform.forward = Vector3.SmoothDamp(transform.forward, dir, ref rotationalVelocity, smoothenedRotation);
             }
             else playerDetected = false;
-        }
-    }
-
-    private void CheckCollisions()
-    {
-        if (doCollisionTest)
-        {
-            Vector3 dir = target.position - enemyHeadPos.position;
-            Physics.SphereCast(enemyHeadPos.position, collisionSphereSize, dir, out hit, detectionStopDistance, collisionLayerMask);
-
-            if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Player"))
-            {
-                playerDetected = false;
-            }
-        }
+        }*/
     }
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Detection detection;
-    private ThirdPersonController TPC;
+    Detection detection;
+    ThirdPersonController TPC;
 
     public static Player Instance;
 
@@ -23,13 +23,14 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        TPC = GetComponent<ThirdPersonController>();
         loseText.SetActive(false);
         winText.SetActive(false);
     }
 
     void Update()
     {
-        if (detection.playerDetected)
+        if (detection && detection.playerDetected)
         {
             detection.enemySpeed = 0f;
             TPC.MoveSpeed = 0f;
@@ -40,9 +41,13 @@ public class Player : MonoBehaviour
     {
         if (gameObject.CompareTag("winZone"))
         {
-            detection.enemySpeed = 0f;
             TPC.MoveSpeed = 0f;
             winText.SetActive(true);
         }
     }
+    public void OnDetection(Detection detector)
+    {
+        detection = detector;
+    }
 }
+

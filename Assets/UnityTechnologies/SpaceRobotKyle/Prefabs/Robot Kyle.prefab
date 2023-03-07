@@ -457,7 +457,7 @@ Transform:
   - {fileID: 585007122471594143}
   - {fileID: 110199108}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5717370821310611589
 Animator:
@@ -491,6 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a181ab93f8fc8a47a5b3e3e8c2774da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detection: {fileID: 1769447168}
 --- !u!114 &1769447168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,12 +504,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a317840a0c3f043b5821ee06faf00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRb: {fileID: 0}
+  enemyRb: {fileID: 6011568256393564369}
   enemySpeed: 1
   smoothenedRotation: 0.05
   detectionDistance: 3
   detectionStopDistance: 5
-  enemyHeadPos: {fileID: 0}
+  playerDetected: 0
+  target: {fileID: 0}
+  enemyHeadPos: {fileID: 8293871684065244482}
   doCollisionTest: 1
   collisionSphereSize: 0.1
   collisionLayerMask:
