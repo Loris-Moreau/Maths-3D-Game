@@ -44,7 +44,16 @@ public class Player : MonoBehaviour
             TPC.MoveSpeed = 0f;
             winText.SetActive(true);
         }
+
+        if (gameObject.CompareTag("Enemy"))
+        {
+            if(canBackStab)
+            {
+                //kill enemy
+            }
+        }
     }
+
     public void OnDetection(Detection detector)
     {
         detection = detector;

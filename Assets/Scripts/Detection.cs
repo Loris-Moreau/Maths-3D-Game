@@ -22,9 +22,8 @@ public class Detection : MonoBehaviour
     private Vector3 rotationalVelocity;
 
     [Space]
-
-    /*[SerializeField]*/ private float detectionDistance = 4f;
-    //[SerializeField] private float detectionStopDistance = 7f;
+    
+    private float detectionDistance = 4f;
 
     [Space]
     
@@ -52,18 +51,5 @@ public class Detection : MonoBehaviour
                 Player.Instance.OnDetection(this);
             }
         }
-
-        /*if (playerDetected)
-        {
-            if (Vector3.Distance(transform.position, target.position) < detectionStopDistance)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, target.position, enemySpeed * Time.fixedDeltaTime);
-
-                dir.y = 0f;
-
-                transform.forward = Vector3.SmoothDamp(transform.forward, dir, ref rotationalVelocity, smoothenedRotation);
-            }
-            else playerDetected = false;
-        }*/
     }
 }
