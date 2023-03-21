@@ -18,8 +18,8 @@ public class Detection : MonoBehaviour
 
     [Space]
 
-    [SerializeField] private float smoothenedRotation = 0.05f;
-    private Vector3 rotationalVelocity;
+    //[SerializeField] private float smoothenedRotation = 0.05f;
+    //private Vector3 rotationalVelocity;
 
     [Space]
     
