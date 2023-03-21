@@ -24,8 +24,9 @@ public class Player : MonoBehaviour
     private void Start()
     {
         TPC = GetComponent<ThirdPersonController>();
-        loseText.SetActive(false);
-        winText.SetActive(false);
+
+        /*loseText.SetActive(false);
+        winText.SetActive(false);*/
     }
 
     void Update()
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
         {
             if(canBackStab)
             {
+                
                 //kill enemy
             }
         }
