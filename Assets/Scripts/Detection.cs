@@ -1,11 +1,5 @@
-using System.Net;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.Rendering;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
-using UnityEngine.Rendering;
-using UnityEngine.Windows;
+
 
 public class Detection : MonoBehaviour
 {
@@ -15,11 +9,6 @@ public class Detection : MonoBehaviour
 
     [SerializeField] private Rigidbody enemyRb;
     [SerializeField] public float enemySpeed = 1f;
-
-    [Space]
-
-    //[SerializeField] private float smoothenedRotation = 0.05f;
-    //private Vector3 rotationalVelocity;
 
     [Space]
     

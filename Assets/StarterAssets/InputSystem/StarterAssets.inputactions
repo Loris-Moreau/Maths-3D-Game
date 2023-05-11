@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Stab",
+                    "name": "Attack",
                     "type": "Button",
                     "id": "810547f3-5311-421e-b51d-caedcd5f5d86",
                     "expectedControlType": "Button",
@@ -231,11 +231,11 @@
                 {
                     "name": "",
                     "id": "94c302ba-fdc5-46ed-95df-5db165b9a676",
-                    "path": "<Keyboard>/e",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Stab",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -246,7 +246,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Stab",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEditor;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -42,5 +38,10 @@ public class Enemy : MonoBehaviour
                 Debug.Log("Nope");
             }
         }
+    }
+
+    public void die()
+    {
+        
     }
 }

@@ -1,11 +1,11 @@
 using StarterAssets;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     Detection detection;
+    Enemy enemy;
     ThirdPersonController TPC;
 
     public static Player Instance;
@@ -45,20 +45,21 @@ public class Player : MonoBehaviour
             TPC.MoveSpeed = 0f;
             winText.SetActive(true);
         }
-
-        if (gameObject.CompareTag("Enemy"))
-        {
-            if(canBackStab)
-            {
-                
-                //kill enemy
-            }
-        }
     }
 
     public void OnDetection(Detection detector)
     {
         detection = detector;
     }
-}
 
+    public void attack(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (canBackStab)
+            {
+                enemy.die();
+            }
+        }
+    }
+}
